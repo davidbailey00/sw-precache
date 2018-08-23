@@ -681,7 +681,8 @@ In the meantime, you can get updates by following [@workboxjs](https://twitter.c
 ## License
 
 Copyright © 2017 Google, Inc.
-Modifications © 2018 Gatsby
+
+Modifications copyright © 2018 Gatsby
 
 Licensed under the [Apache License, Version 2.0](LICENSE) (the "License");
 you may not use this file except in compliance with the License. You may
