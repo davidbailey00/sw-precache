@@ -355,7 +355,7 @@ describe('stripIgnoredUrlParameters', function() {
     done();
   });
 
-  it('should work when a multiples regexes each match multiple keys', function(done) {
+  it('should work when a multiples regexps each match multiple keys', function(done) {
     var strippedUrl = externalFunctions.stripIgnoredUrlParameters(testUrl, [/^t/, /^f/]);
     assert.strictEqual(strippedUrl, 'http://example.com/index.html?one=1');
     done();

@@ -62,6 +62,7 @@ by [Huang Xuan](https://twitter.com/Huxpro).
     - [navigateFallback [String]](#navigatefallback-string)
     - [navigateFallbackWhitelist [Array&#x27e8;RegExp&#x27e9;]](#navigatefallbackwhitelist-arrayregexp)
     - [navigateFallbackBlacklist [Array&#x27e8;RegExp&#x27e9;]](#navigatefallbackblacklist-arrayregexp)
+    - [navigateFallbackRegExpsIncludeParameters [Boolean]](#navigatefallbackregexpsincludeparameters-boolean)
     - [replacePrefix [String]](#replaceprefix-string)
     - [runtimeCaching [Array&#x27e8;Object&#x27e9;]](#runtimecaching-arrayobject)
     - [skipWaiting [Boolean]](#skipwaiting-boolean)
@@ -491,6 +492,17 @@ the default options for `navigateFallbackWhitelist`, `navigateFallback` will
 apply to all navigation requests, regardless of URL.
 
 _Default_: `[]`
+
+#### navigateFallbackRegExpsIncludeParameters [Boolean]
+Controls whether `navigateFallbackWhitelist` and `navigateFallbackBlacklist`
+consider URL paramaters (a.k.a. query strings) when matching URLs, or just
+the paths.
+
+For example, if you went to `https://example.com/page?hello=123`, the whitelist
+and blacklist would match against `/page` with this option set to `false`, or
+`/page?hello=123` with it set to `true`.
+
+_Default_: `false`
 
 #### replacePrefix [String]
 Replaces a specified string at the beginning of path URL's at runtime. Use this
