@@ -21,7 +21,7 @@ import del from 'del';
 import eslint from 'gulp-eslint';
 import glob from 'glob';
 import gulp from 'gulp';
-import gutil from 'gulp-util';
+import log from 'fancy-log';
 import cleanCSS from 'gulp-clean-css';
 import packageJson from './package.json';
 import path from 'path';
@@ -62,7 +62,7 @@ gulp.task('bundle-app', () => {
 
   return bundler.bundle()
     .on('error', function(error) {
-      gutil.log('Babelify error:', error.message);
+      log('Babelify error:', error.message);
       this.emit('end');
     })
     .pipe(source('app.js'))
@@ -76,12 +76,12 @@ gulp.task('bundle-third-party', () => {
 
   return bundler.bundle()
     .on('error', function(error) {
-      gutil.log('Babelify error:', error.message);
+      log('Babelify error:', error.message);
       this.emit('end');
     })
     .pipe(source('third-party.js'))
     .pipe(buffer())
-    .on('error', gutil.log)
+    .on('error', log)
     .pipe(gulp.dest(`${BUILD_DIR}/js`));
 });
 
@@ -163,7 +163,7 @@ gulp.task('generate-service-worker', () => {
 
     cacheId: packageJson.name,
     dontCacheBustUrlsMatching: /./,
-    logger: gutil.log,
+    logger: log,
     stripPrefix: 'build/',
     verbose: true
   });
