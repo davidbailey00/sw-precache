@@ -3,7 +3,7 @@
 'use strict';
 
 var gulp = require('gulp');
-var $ = require('gulp-load-plugins')();
+var log = require('fancy-log');
 var del = require('del');
 var express = require('express');
 var ghPages = require('gh-pages');
@@ -53,7 +53,7 @@ function writeServiceWorkerFile(rootDir, handleFetch, callback) {
     // This allows you to test precaching behavior without worry about the cache preventing your
     // local changes from being picked up during the development cycle.
     handleFetch: handleFetch,
-    logger: $.util.log,
+    logger: log,
     runtimeCaching: [{
       // See https://github.com/GoogleChrome/sw-toolbox#methods
       urlPattern: /runtime-caching/,
