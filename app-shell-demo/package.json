@@ -39,7 +39,7 @@
     "redux-actions": "^0.9.1",
     "redux-promise": "^0.5.3",
     "run-sequence": "^1.2.1",
-    "sw-precache": "https://github.com/GoogleChrome/sw-precache#master",
+    "sw-precache": "https://github.com/davidbailey00/sw-precache#master",
     "vinyl-buffer": "^1.0.0",
     "vinyl-source-stream": "^1.1.0"
   },

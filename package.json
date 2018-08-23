@@ -6,7 +6,7 @@
     "name": "David Bailey",
     "email": "david.j.b@vivaldi.net"
   },
-  "homepage": "https://github.com/googlechrome/sw-precache",
+  "homepage": "https://github.com/davidbailey00/sw-precache",
   "main": "lib/sw-precache.js",
   "keywords": [
     "caching",
@@ -51,8 +51,8 @@
     "sw-toolbox": "^3.4.0",
     "update-notifier": "^2.3.0"
   },
-  "repository": "googlechrome/sw-precache",
-  "bugs": "https://github.com/googlechrome/sw-precache/issues",
+  "repository": "davidbailey00/sw-precache",
+  "bugs": "https://github.com/davidbailey00/sw-precache/issues",
   "license": "Apache-2.0",
   "scripts": {
     "test": "gulp test lint",
