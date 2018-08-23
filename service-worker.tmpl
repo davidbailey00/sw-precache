@@ -152,7 +152,8 @@ self.addEventListener('fetch', function(event) {
     if (!shouldRespond &&
         navigateFallback &&
         (event.request.mode === 'navigate') &&
-        isPathWhitelisted(<%= navigateFallbackWhitelist %>, event.request.url)) {
+        isPathWhitelisted(<%= navigateFallbackWhitelist %>, event.request.url, <%= navigateFallbackRegexesIncludeParameters %>) &&
+        !isPathBlacklisted(<%= navigateFallbackBlacklist %>, event.request.url, <%= navigateFallbackRegexesIncludeParameters %>)) {
       url = new URL(navigateFallback, self.location).toString();
       shouldRespond = urlsToCacheKeys.has(url);
     }
