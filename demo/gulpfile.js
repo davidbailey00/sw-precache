@@ -20,7 +20,7 @@ function runExpress(port, rootDir) {
 
   app.use(express.static(rootDir));
   app.set('views', path.join(rootDir, 'views'));
-  app.set('view engine', 'jade');
+  app.set('view engine', 'pug');
 
   app.get('/dynamic/:page', function(req, res) {
     res.render(req.params.page);
