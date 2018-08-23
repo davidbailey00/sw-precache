@@ -61,6 +61,7 @@ by [Huang Xuan](https://twitter.com/Huxpro).
     - [maximumFileSizeToCacheInBytes [Number]](#maximumfilesizetocacheinbytes-number)
     - [navigateFallback [String]](#navigatefallback-string)
     - [navigateFallbackWhitelist [Array&#x27e8;RegExp&#x27e9;]](#navigatefallbackwhitelist-arrayregexp)
+    - [navigateFallbackBlacklist [Array&#x27e8;RegExp&#x27e9;]](#navigatefallbackblacklist-arrayregexp)
     - [replacePrefix [String]](#replaceprefix-string)
     - [runtimeCaching [Array&#x27e8;Object&#x27e9;]](#runtimecaching-arrayobject)
     - [skipWaiting [Boolean]](#skipwaiting-boolean)
@@ -189,7 +190,7 @@ For those who would prefer not to use `sw-precache` as part of a `gulp` or
 [options listed](#options-parameter) in the API, provided via flags or an
 external JavaScript configuration file.
 
-Hypenated flags are converted to camelCase [options](#options-parameter).  
+Hypenated flags are converted to camelCase [options](#options-parameter).
 Options starting with `--no` prefix negate the boolean value. For example, `--no-clients-claim` sets the value of `clientsClaim` to `false`.
 
 **Warning:** When using `sw-precache` "by hand", outside of an automated build process, it's your
@@ -473,6 +474,21 @@ navigateFallbackWhitelist: [/^\/guide\//]
 
 If set to `[]` (the default), the whitelist will be effectively bypassed, and
 `navigateFallback` will apply to all navigation requests, regardless of URL.
+
+_Default_: `[]`
+
+#### navigateFallbackBlacklist [Array&#x27e8;RegExp&#x27e9;]
+The opposite of `navigateFallbackWhitelist` - URLs with matching paths will not
+fallback to the cached App Shell, even if they match a `RegExp` in
+`navigateFallbackWhitelist`.
+
+This option is useful if you're using `navigateFallbackWhitelist` but want to
+add exceptions, without needing to complicated your `RegExp`s, or if you just
+want to cache all URLs except for certain specific ones.
+
+If you set to `[]` (the default), no URLs will be blacklisted - combined with
+the default options for `navigateFallbackWhitelist`, `navigateFallback` will
+apply to all navigation requests, regardless of URL.
 
 _Default_: `[]`
 
