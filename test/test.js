@@ -1,6 +1,6 @@
 /**
  * Copyright 2015 Google Inc. All rights reserved.
- * Modifications copyright 2018 Gatsby. All rights reserved.
+ * Modifications copyright 2018 David Bailey. All rights reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
