@@ -424,6 +424,30 @@ describe('isPathWhitelisted', function() {
   });
 });
 
+describe('isPathBlacklisted', function() {
+  var url = 'http://example.com/test/path?one=two';
+
+  it('should return false when passed an empty whitelist', function(done) {
+    assert(!externalFunctions.isPathBlacklisted([], url));
+    done();
+  });
+
+  it('should return true when passed a whitelist matching the url', function(done) {
+    assert(externalFunctions.isPathBlacklisted([/^\/test\/path$/], url));
+    done();
+  });
+
+  it('should return false when passed a whitelist not matching the url', function(done) {
+    assert(!externalFunctions.isPathBlacklisted([/^oops$/], url));
+    done();
+  });
+
+  it('should return true when passed a whitelist whose second value matches the url', function(done) {
+    assert(externalFunctions.isPathBlacklisted([/^oops$/, /^\/test\/path$/], url));
+    done();
+  });
+});
+
 describe('createCacheKey', function() {
   it('should create the expected value when the original URL.search is empty', function(done) {
     var url = 'http://example.com/test/path';
